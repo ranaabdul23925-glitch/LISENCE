@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>ShopPOS License Admin</title>
+    <link rel="stylesheet" href="/admin/styles.css">
+    <script src="/admin/app.js" defer></script>
+  </head>
+  <body>
+    <main id="login-view" class="login-layout">
+      <section class="login-card">
+        <div class="brand-mark">S</div>
+        <p class="eyebrow">PRIVATE LICENSING CONSOLE</p>
+        <h1>ShopPOS Admin</h1>
+        <p class="muted">Sign in with your administrator bearer token. Access is audited and never stored in this browser.</p>
+        <form id="login-form" class="stack">
+          <label for="admin-token">Administrator token</label>
+          <input id="admin-token" type="password" autocomplete="current-password" required>
+          <button class="button button-primary" type="submit">Sign in securely</button>
+        </form>
+        <p id="login-error" class="notice notice-error" role="alert" hidden></p>
+        <p class="security-note">Use this console only over localhost during development or HTTPS in production.</p>
+      </section>
+    </main>
+
+    <div id="app-view" class="app-layout" hidden>
+      <aside class="sidebar">
+        <a class="brand" href="/admin" aria-label="ShopPOS Admin home"><span class="brand-mark">S</span><span>ShopPOS<small>LICENSE ADMIN</small></span></a>
+        <nav id="navigation" aria-label="Admin navigation">
+          <button data-page="overview" class="nav-link active">Overview</button>
+          <button data-page="shops" class="nav-link">Shops</button>
+          <button data-page="licenses" class="nav-link">Licenses</button>
+          <button data-page="generate" class="nav-link">Generate key</button>
+          <button data-page="plans" class="nav-link">Plans & settings</button>
+          <button data-page="payments" class="nav-link">Payments</button>
+          <button data-page="activations" class="nav-link">Activation history</button>
+          <button data-page="audit" class="nav-link">Audit logs</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <span id="admin-identity" class="admin-identity"></span>
+          <button id="logout-button" class="nav-link logout-button">Sign out</button>
+        </div>
+      </aside>
+      <main class="main-content">
+        <header class="topbar">
+          <div><p class="eyebrow">SECURE LICENSE OPERATIONS</p><h1 id="page-title">Overview</h1></div>
+          <span class="live-indicator">PRIVATE CONSOLE</span>
+        </header>
+        <div id="global-notice" class="global-notice" role="status" hidden></div>
+        <section id="page-content" aria-live="polite"></section>
+      </main>
+    </div>
+  </body>
+</html>

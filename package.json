@@ -1,0 +1,18 @@
+{
+  "name": "shoppos-license-server",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Authenticated ShopPOS subscription and license service",
+  "scripts": {
+    "start": "node postgres/server.cjs",
+    "start:sqlite": "node license-server.cjs",
+    "test": "node --test license-server.test.cjs postgres/*.test.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "pg": "^8.23.1",
+    "sql.js": "^1.15.2"
+  }
+}

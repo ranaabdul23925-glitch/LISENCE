@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    { "source": "/v1/:path*", "destination": "/api/v1/:path*" },
+    { "source": "/admin/:path*", "destination": "/api/admin/:path*" },
+    { "source": "/admin", "destination": "/api/admin" }
+  ],
+  "functions": {
+    "api/[...route].js": {
+      "includeFiles": "admin-dashboard/**"
+    }
+  }
+}
