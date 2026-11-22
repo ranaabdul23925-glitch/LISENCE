@@ -23,9 +23,9 @@
 // HTTP server, then end the PostgreSQL pool.
 
 const {
-  validatePostgresServerConfiguration
-} = require("./license-server.cjs");
-const { createPostgresLicenseServer } = require("./postgres-adapter.cjs");
+  validatePostgresServerConfiguration,
+  createPostgresLicenseServer
+} = require("./postgres-adapter.cjs");
 
 async function startPostgresFromEnvironment(env = process.env) {
   const config = validatePostgresServerConfiguration(env);
