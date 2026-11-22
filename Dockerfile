@@ -30,7 +30,7 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 
 # Copy the server sources, migrations, admin dashboard and startup entry point.
-COPY license-server.cjs start-postgres.cjs postgres-adapter.cjs sqlite-to-postgres.cjs sqlite-migrate.cjs payments-gateway.cjs ./
+COPY license-server.cjs start-postgres.cjs postgres-adapter.cjs sqlite-to-postgres.cjs sqlite-migrate.cjs payments-gateway.cjs signing-keys.cjs ./
 COPY migrations ./migrations
 COPY admin-dashboard ./admin-dashboard
 
